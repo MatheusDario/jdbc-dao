@@ -4,6 +4,8 @@ import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.entities.Department;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program2 {
@@ -33,5 +35,11 @@ public class Program2 {
         Integer id = sc.nextInt();
         departmentDao.deleteById(id);
         System.out.println("Delete complete!");
+
+        System.out.println("\n=== TEST 5: FInd All ===");
+        List<Department> list = departmentDao.findAll();
+        for (Department obj : list) {
+            System.out.println(obj);
+        }
     }
 }
